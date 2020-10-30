@@ -1,0 +1,19 @@
+name: check-eol
+author: erclu
+description: "Checks EOL endings in given path"
+
+branding:
+  icon: file-text
+  color: gray-dark
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.path }}
+
+inputs:
+  path:
+    description: Path to check
+    required: false
+    default: "."
