@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Use this action to check EOL 
-        uses: easylo/check-eol@v1
+        uses: easylo/check-eol@v1.1
         with: # omit this mapping to use default path
           path: ./a-custom-path
 ```
