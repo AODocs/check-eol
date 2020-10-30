@@ -31,6 +31,7 @@ No files with EOL errors found.
 ## Configuration
 
 ```yml
+# .github/workflows/check-eol.yml
 name: Check EOL
 
 on: push
