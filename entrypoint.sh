@@ -20,8 +20,8 @@ while IFS= read -r line; do
 
     file_name=$(echo $line |awk '{ print $NF }')
     attribute=$(echo $line |awk 'match($0, / attr\/(text|-text) /) { print substr( $0, RSTART+6, RLENGTH-7 )}')
-    working_tree=$(echo $line |awk 'match($0, / w\/(lf|crlf|none) /) { print substr( $0, RSTART+3, RLENGTH-4 )}')
-    expected=$(echo $line |awk 'match($0, / eol=(lf|crlf|none) /) { print substr( $0, RSTART+5, RLENGTH-6 )}')
+    working_tree=$(echo $line |awk 'match($0, / w\/(lf|crlf|mixed|none) /) { print substr( $0, RSTART+3, RLENGTH-4 )}')
+    expected=$(echo $line |awk 'match($0, / eol=(lf|crlf|mixed|none) /) { print substr( $0, RSTART+5, RLENGTH-6 )}')
 
     # echo "$file_name -- ##$attribute##"
     if [[ "$attribute" == "text" ]]
