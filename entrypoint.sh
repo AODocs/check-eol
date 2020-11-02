@@ -31,7 +31,7 @@ while IFS= read -r line; do
             msg=$( printf "${BOLD_YELLOW}No EOL rule defined for %s${NC}\n" $file_name)
             rInfos+=("$msg")
         else
-            if [ "$working_tree" != "$expected"  && "$working_tree" != "none" ]
+            if [[ "$working_tree" != "$expected"  && "$working_tree" != "none" ]]
             then             
                 msg=$( printf "Found file ${BOLD_RED}%s${NC} with ${BOLD_CYAN}%s${NC} endings but expected ${BOLD_YELLOW}%s.${NC}\n" $file_name $working_tree $expected)
                 rErrors+=("$msg")
