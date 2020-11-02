@@ -26,7 +26,7 @@ while IFS= read -r line; do
     # echo "$file_name -- ##$attribute##"
     if [[ "$attribute" == "text" ]]
     then
-        if [[ -z "$working_tree" &&  -z "$expected" ]]
+        if [[ -z "$expected" ]]
         then        
             msg=$( printf "${BOLD_YELLOW}No EOL rule defined for %s${NC}\n" $file_name)
             rInfos+=("$msg")
